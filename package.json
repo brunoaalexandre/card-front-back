@@ -1,10 +1,20 @@
 {
   "name": "card-front-back",
-  "private": true,
-  "version": "0.0.0",
+  "description": "Cards component that flips when hovered over.",
+  "version": "1.0.0",
+  "main": "dist/index.tsx",
+  "module": "dist/index.tsx",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunoaalexandre/card-front-back"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -13,6 +23,8 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.7",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@types/styled-components": "^5.1.24",
